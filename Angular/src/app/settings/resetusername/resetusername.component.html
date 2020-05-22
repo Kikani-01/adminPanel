@@ -1,0 +1,19 @@
+<div class="pagecontent" id="pagecontent">
+    <div class="modal-header">
+        <h3>Change Username
+            <span class="extra-title muted"></span>
+        </h3>
+    </div>
+    <form #resetusrForm="ngForm" (ngSubmit)="onSubmit(resetusrForm)">
+        <div class="control-group">
+            <label for="username" class="control-label">Username</label>
+            <div class="controls">
+                <input type="text" #name="ngModel" name="username" [(ngModel)]="resetusername">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary" id="username_modal_save" [disabled]="!resetusrForm.valid">Change Username</button>
+        </div>
+    </form>
+</div>

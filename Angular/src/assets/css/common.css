@@ -1,0 +1,116 @@
+/*sections comman css*/
+
+/*page content css*/
+.wrapper.selcted .pagecontent {
+    margin-left: 251px;
+}
+.pagecontent{
+    margin-left: 0px;    
+    padding: 18px;
+}
+
+.wrapper {
+    display: block;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 9999;
+    background: #000;
+    transition: all 0.5s ease-in-out;
+    margin-top: 63px;
+    padding:12px;
+}
+.navbarcustom.active {
+    display: block;
+}
+.navbarcustom{
+    display: none;
+}
+.top-header {
+    background: #ddd;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 998;
+    opacity: 0;
+    /* animate the transition */
+    transition: all 0.5s ease-in-out;
+}
+/* display .overlay when it has the .active class */
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+}
+
+/*toggle buttn css*/
+.togglebtn span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+.togglebtn {
+    background: #000;
+    padding: 0 10px;
+}
+
+/*sidebar css*/
+.list-unstyled li {
+    padding: 0;
+    display: block;
+    float: none;
+}
+
+.list-unstyled li a {
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.list-unstyled {
+    margin-top: 25px;
+}
+
+.list-unstyled li:hover {
+    background: #eee;
+}
+
+.list-unstyled li:hover  a {
+    color: #000;
+}
+.top-header h5 {
+    font-weight: 600;
+    margin-left: 37px;
+    vertical-align: middle;
+    font-size: 22px;
+    margin-bottom: 5;
+    margin-top: 2;
+}

@@ -1,0 +1,61 @@
+
+<div class="wrapper">
+        <!-- <div id="content" *ngIf="isLoggedIn$ | async as isLoggedIn" class="top-header"> -->
+            <div id="content"  class="top-header">
+            <button type="button" id="sidebarCollapse" class="btn togglebtn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            </div>
+       
+           
+       
+        <!-- Sidebar -->
+        <nav id="sidebar" class="navbarcustom">
+    
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+    
+            <div class="sidebar-header">
+    
+            </div>
+    
+            <ul class="list-unstyled components">
+    
+                <li class="active">
+                    <a routerLink="/dashboard" routerLinkActive="active" data-toggle="collapse" aria-expanded="false">Dashboard</a>    
+                </li>
+                <li>
+                    <a routerLink="/users" routerLinkActive="active" data-toggle="collapse" aria-expanded="false">Users</a>
+                </li>
+                <li>
+                    <a routerLink="/settings" routerLinkActive="active" data-toggle="collapse" aria-expanded="false">Settings</a>
+                </li>
+                <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="/pages">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="/pages">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="/pages">Page 3</a>
+                    </li>
+                </ul>
+                </li>
+              
+            </ul>
+        </nav>
+    
+        <!-- Page Content -->
+       
+<router-outlet></router-outlet>
+
+        <!-- Dark Overlay element -->
+        <div class="overlay"></div>
+    </div>

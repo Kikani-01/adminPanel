@@ -1,0 +1,108 @@
+
+<div class="pagecontent" id="pagecontent">
+           
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content white-text">
+                    <div class="row">
+                        <div class="col s5">
+                            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userservice.selectedUser._id">
+                                <div class="row">
+                                        <label class="col-form-label">Username :
+                                                <label class="red-text">*</label>
+                                            </label>
+                                    <div class="input-field col s12">
+                                        <input type="text" name="username" #name="ngModel" [(ngModel)]="userservice.selectedUser.username" placeholder="Enter name"
+                                            required>                                  
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <label class="col-form-label">Email :
+                                                <label class="red-text">*</label>
+                                        </label>
+                                    <div class="input-field col s12">
+                                        <input type="text" name="email" #name="ngModel" [(ngModel)]="userservice.selectedUser.email" placeholder="Eg.admin@gmail.com"
+                                            required>
+                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <label class="col-form-label">Password :
+                                            <label class="red-text">*</label>
+                                        </label>
+                                    <div class="input-field col s12">
+                                        <input type="password" name="password" #name="ngModel" [(ngModel)]="userservice.selectedUser.password" placeholder="Enter Password"
+                                            required>
+                                      
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <label class="col-form-label">Country :</label>
+                                    <div class="input-field col s12">
+                                        <input type="text" name="country" #name="ngModel" [(ngModel)]="userservice.selectedUser.country" placeholder="Enter Your Country name">
+                                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <label class="col-form-label">State :</label>
+                                    <div class="input-field col s12">
+                                        <input type="text" name="state" #name="ngModel" [(ngModel)]="userservice.selectedUser.state" placeholder="Enter Your state name">
+                                        
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                        <label class="col-form-label">City :</label>
+                                    <div class="input-field col s12">
+                                        <input type="text" name="city" #name="ngModel" [(ngModel)]="userservice.selectedUser.city" placeholder="Enter Your city">
+                                       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <button class="btn btn-custom right" type="button" (click)="resetForm(userForm)">Reset</button>
+                                        <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col s7">
+                            <table class="responsive-table highlight">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                        <th>Country</th>
+                                        <th>State</th>
+                                        <th>City</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tr *ngFor="let usr of userservice.users">
+                                    <td>{{usr.username}}</td>
+                                    <td>{{usr.email}}</td>
+                                    <td>{{usr.password}}</td>
+                                    <td>{{usr.country}}</td>
+                                    <td>{{usr.state}}</td>
+                                    <td>{{usr.city}}</td>
+                                    <td>
+                                        <a class="action-btn" (click)="onEdit(usr)">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a class="action-btn" (click)="onDelete(usr._id,userForm)">
+                                            <i class="material-icons">delete</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>

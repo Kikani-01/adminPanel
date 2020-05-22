@@ -1,0 +1,21 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+        <h2>Admin Login</h2>
+      <!-- Login Form -->
+      <div class="login-content">
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+          <!-- <input type="hidden" name="_id" [(ngModel)]="loginservice.selectedAdmin._id"> -->
+        <input type="text" id="username"  class="fadeIn second" name="username" [(ngModel)]="username" placeholder="Please enter name">
+        <!-- <input type="text" id="email" class="fadeIn second" name="email"  placeholder="Enter Email Id"> -->
+        <input type="password" id="password"class="fadeIn third" name="password"  [(ngModel)]="password" placeholder="Enter Your password">
+        <button type="submit" class="btn btn-default" [disabled]="!loginForm.valid" >Login</button>
+      </form>
+    </div>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
